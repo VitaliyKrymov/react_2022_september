@@ -1,28 +1,29 @@
 import {useEffect, useState} from "react";
 
-import {userService}
+import {userService} from "../../services";
+import {User} from "../user/User";
+import {UserDetails} from "../user-details/User-details";
 
-const Users=()=>{
+const Users = () => {
+    const [users, setUsers] = useState([]);
+    const [user, setUser] = useState(null);
 
-    const Users=useState([]);
-    const [user,setUser] = useState([])
+    const showUser = (obj) => {
+        setUser(obj)
+    }
 
-    useEffect(()=>{
-        get
-
-    },[])
-
-    return(
+    useEffect(() => {
+        userService.getAll().then(value => setUsers(value.data))
+    }, [])
+    return (
         <div>
             {
-
-                users.map(user=><User key={user.id} user={user} showUser={showUser}/>)
+                user && <UserDetails key={user.id} user={user}/>
             }
-            {
-                user && <UserDetails key ={user.id} />
+            <hr/>
+            {users.map(user => <User key={user.id} user={user} showUser={showUser}/>)
             }
         </div>
     )
-
 }
-export {Users}
+export {Users};
