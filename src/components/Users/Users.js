@@ -10,7 +10,6 @@ export default function Users() {
     let lift = (obj) => {
         console.log(obj);
         setUser(obj)
-
     }
 
     useEffect(() => {
@@ -27,15 +26,13 @@ export default function Users() {
             <hr/>
             {/*{user && <div>{JSON.stringify(user)}</div>}*/}
             {/*{user? <div> user is </div> : <div> no user </div>}*/}
-            {/*{JSON.stringify(user)}*/}
             <h3>{user?.username}</h3>
             <hr/>
             {users.map((user, index) => (<User
                 item={user}
                 key={index}
                 lift={lift}/>))};
-
         </div>
-    );
+    )
 };
 
