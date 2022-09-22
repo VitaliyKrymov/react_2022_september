@@ -14,6 +14,7 @@ export default function UserChoser(){
         console.log(id);}
     const decrement =()=>{
         id--;
+        if(id<1){id=1}
         setId(id)
         console.log(id);}
 
