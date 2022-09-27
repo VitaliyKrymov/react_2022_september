@@ -11,13 +11,13 @@ const Cars = () => {
         carService.getAll().then(({data}) => setCars(data))
     }, []);
 
-return (
-    <div>
-        <CarForm/>
-        <hr/>
-            {cars.map(car=><Car key={car.id} car={car}/>)}
-    </div>
-);
+    return (
+        <div>
+            <CarForm setCars={setCars}/>
+            <hr/>
+            {cars.map(car => <Car key={car.id} car={car} />)}
+        </div>
+    );
 };
 
 export {Cars}
