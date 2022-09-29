@@ -1,7 +1,8 @@
 import css from './Car.module.css'
 
-const Car = ({car}) => {
+const Car = ({car,setCars}) => {
     const {id, model, price, year} = car;
+
     return (
         <div className={`${css.Car} ${css.tool}`}>
             <div>

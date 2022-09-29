@@ -18,12 +18,12 @@ const CarForm = ({setCars}) => {
     },[])
 
     const submit = async (car) => {
-        const {data} = await carService.create(car);
-        setCars(cars => [...cars, data])
+         const {data} = await carService.create(car);
+         setCars(cars => [...cars, data])
         reset();
     }
     return (
-        // <form onSubmit={handleSubmit(submit)} onChange={() => conso le.log(errors)}>
+        // <form onSubmit={handleSubmit(submit)} onChange={() => console.log(errors)}>
         //     <input type="text" placeholder={'model'} {...register('model', {
         //         required: true,
         //         minLength: {value: 2, message: 'min 2 ch'}
