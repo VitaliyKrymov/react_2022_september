@@ -8,7 +8,8 @@ const Users = () => {
 
     useEffect(()=>{
         getUsers().then(users =>setUsers(users.data))} ,[] )
-    console.log(users);
+    // console.log(users);
+
     return (
         <div>
             {users.map(user=><User key={user.id} user={user}/>)}

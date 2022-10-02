@@ -7,7 +7,7 @@ const User = ({user}) => {
     const [posts, setPosts] = useState(null);
 
     const showPosts = () => {
-        console.log('Posts')
+        // console.log('Posts')
         getPostsById(user.id).then(posts => setPosts(posts.data))
     }
 
@@ -26,7 +26,6 @@ return (
 
         {!hidden && <button onClick={() => {
             setHidden(true);
-            // console.log("Click");
             showPosts(posts);
         }}>Posts</button>}
 
