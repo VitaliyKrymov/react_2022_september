@@ -16,7 +16,7 @@ const User = ({user}) => {
 return (
     <div>
         <div>{user.id}</div>
-        <div>{user.name}</div>
+        <h3>{user.name}</h3>
         <div>{user.email}</div>
         <div>{user.username}</div>
 

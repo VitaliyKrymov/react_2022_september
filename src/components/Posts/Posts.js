@@ -3,7 +3,7 @@ const Posts = ({posts}) => {
     return (
         <div>
             <hr/>
-            <h3>Posts:</h3>
+            <h4>Posts:</h4>
             {posts.map(value => value.title)}
         </div>
     );
