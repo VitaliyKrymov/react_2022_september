@@ -1,7 +1,11 @@
-const Posts = () => {
+const Posts = ({posts}) => {
+
     return (
         <div>
-            Posts
+            <hr/>
+            <h3>Posts:</h3>
+            {posts.map(value => value.title)}
+
         </div>
     );
 };
