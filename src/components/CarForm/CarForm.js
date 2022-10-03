@@ -15,7 +15,7 @@ const CarForm = ({setCars}) => {
         setValue("model","BMW")
         setValue("price",0)
         setValue("year",1990)
-    },[])
+    },[setValue])
 
     const submit = async (car) => {
          const {data} = await carService.create(car);

@@ -6,8 +6,7 @@ const Car = ({car,setCars}) => {
     return (
         <div className={`${css.Car} ${css.tool}`}>
             <div>
-                <div>id:{id}</div>
-                <div>model:{model}</div>
+                <div>id:{id}model:{model}</div>
                 <div>price:{price}</div>
                 <div>year:{year}</div>
             </div>
@@ -21,3 +20,4 @@ const Car = ({car,setCars}) => {
 }
 
 export {Car};
+
