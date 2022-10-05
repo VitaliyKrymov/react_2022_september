@@ -11,15 +11,15 @@ const CarForm = ({setCars}) => {
         mode: 'all'
     });
 
-    useEffect(()=>{
-        setValue("model","BMW")
-        setValue("price",0)
-        setValue("year",1990)
-    },[setValue])
+    useEffect(() => {
+        setValue("model", "BMW")
+        setValue("price", 0)
+        setValue("year", 1990)
+    }, [setValue])
 
     const submit = async (car) => {
-         const {data} = await carService.create(car);
-         setCars(cars => [...cars, data])
+        const {data} = await carService.create(car);
+        setCars(cars => [...cars, data])
         reset();
     }
     return (
