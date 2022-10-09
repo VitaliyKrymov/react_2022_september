@@ -1,6 +1,9 @@
 import {Route, BrowserRouter, Routes, Link, Outlet} from "react-router-dom";
+
 import {Users} from "./users";
 import {UserDetails} from "./userDetails/UserDetails";
+import {Home} from "./Home/Home";
+import {Posts} from "./Posts/Posts";
 
 function App() {
     return (
@@ -13,20 +16,17 @@ function App() {
 
             <hr/>
             <Routes>
-                <Route path={'/'} element={'Home'}/>
-
+                <Route path={'/'} element={<Home/>}/>
                 <Route path={'users'} element={<Users/>}/>
                 <Route path={'users/:id'} element={<UserDetails/>}/>
-                <Route path={'users/v2/:id'} element={<UserDetailsV2/>}/>
-                <Route path={'posts'} element={<Posts/>}>
-                    <Route/>
-                    <Route/>
+                {/*<Route path={'users/v2/:id'} element={<UserDetailsV2/>}/>*/}
+                <Route path={'posts'} element={<Posts/>}/>
 
 
-                </Routes>
-                    <hr/>
-                    </div>
-                    );
-                }
+            </Routes>
+            <hr/>
+        </div>
+);
+}
 
-                       export default App;
+export default App;

@@ -1,10 +1,9 @@
-import React from 'react';
-import {}
+import React from "react";
 
 const Posts = () => {
     return (
         <div>
-
+            Posts
         </div>
     );
 };
