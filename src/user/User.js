@@ -1,14 +1,22 @@
-import React from 'react';
 import {Link} from "react-router-dom";
 
-const User = () => {
-    let {item:user}=props;
-    return (
-        <div>
-            <h2>{user.name}</h2>
-            <link to={'/users'+user.id} state={{...user}}>details</link>
-        </div>
-    );
-};
+export default function User(props) {
+    let {item: user} = props;
 
-export {User};
+    return (<div>
+        <h2>{user.id} - {user.name} </h2>
+        <p>{user.address.city} <br/> {user.email}</p>
+
+        <div>
+            <Link to={'/users/' + user.id} state={{...user}}>details *variant1</Link>
+        </div>
+
+        <div>
+            <Link to={'/users/v2/' + user.id}>user details *variant2</Link>
+        </div>
+        <hr/>
+
+    </div>);
+}
+
+export {User}

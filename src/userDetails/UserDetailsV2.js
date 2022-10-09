@@ -1,9 +1,27 @@
-const UserDetailsV2 = () => {
+import {useParams} from "react-router-dom";
+import {useEffect, useState} from "react";
+
+ function UserDetailsV2() {
+    let {id} = useParams();
+    let [user, setUser] = useState({});
+
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/users/' + id)
+            .then(value => value.json())
+            .then(value => {
+                setUser({...value});
+            });
+    }, [id]);
     return (
         <div>
-            UserDetailsV2
+            {
+                JSON.stringify(user)
+
+            }
+
         </div>
     );
-};
+}
 
 export {UserDetailsV2};
+
