@@ -16,8 +16,9 @@ function Posts() {
     }, []);
     return (
         <div>
-
+            <h4>POST DETAILS:</h4>
             <Outlet/>
+            <hr/>
             {
                 posts.map(value => <Post key={value.id} post={value}/>)
             }

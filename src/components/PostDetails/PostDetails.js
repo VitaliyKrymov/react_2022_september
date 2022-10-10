@@ -17,7 +17,6 @@ export default function PostDetails() {
     return (
         <div>
             {JSON.stringify(post)}
-
         </div>
     );
 }

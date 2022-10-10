@@ -1,18 +1,25 @@
 import {Route, Routes, Link} from "react-router-dom";
-import css from './App.module.css'
 
+import css from './App.module.css'
 
 import {Users} from "./users";
 import {UserDetails} from "./userDetails/UserDetails";
 import {Home} from "./Home/Home";
 import {Posts} from "./Posts/Posts";
 import {UserDetailsV2} from "./userDetails/UserDetailsV2";
+import PostDetails from "./components/PostDetails/PostDetails";
+import DrillA from "./components/DrillA/DrillA";
+import DrillB from "./components/DrillB/DrillB";
+
+// function UserPosts() {
+//     return <div>Posts of user</div>;
+// }
+
+// function PostDetails() {
+//     return null;
+// }
 
 function UserPosts() {
-    return <div>Posts of user</div>;
-}
-
-function PostDetails() {
     return null;
 }
 
@@ -24,6 +31,7 @@ function App() {
                 <li><Link className={css.link} to={'/'}>home page</Link></li>
                 <li><Link to={'/users'}>users</Link></li>
                 <li><Link to={'/posts'}>posts page</Link></li>
+                <li><Link to={'/drill'}>drill</Link></li>
             </ul>
 
             <hr/>
@@ -39,6 +47,9 @@ function App() {
                     </Route>
                 </Route>
 
+                <Route path={'drill'} element={<DrillA/>}>
+                    <Route path={'drillB'} element={<DrillB/>}/>
+                </Route>
 
             </Routes>
             <hr/>
