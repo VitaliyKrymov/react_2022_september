@@ -1,19 +1,15 @@
 import {MyContext} from "../../App";
+import {Details} from "../Details/Details";
 
 const ComponentC = ({drill}) => {
     return (
         <div>
+            <hr/>
             ComponentC
             <hr/>
             {drill}
             <MyContext.Consumer>
-                {(value)=>value.map(user=>{
-                    return <h4>
-                        {user.name}  -  {user.username}
-                       <h5> {JSON.stringify(user)}</h5>
-                        <hr/>
-                    </h4>}
-                )}
+                {(value)=>value.map(user=><Details key={user.id} user={user}/>)}
             </MyContext.Consumer>
         </div>
     );
